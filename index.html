@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>DC's Changing Landscape</title>
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/map.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="shortcut icon" href="http://mapbox.com/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+    <div id="content">
+        <div id='branding'></div>
+        <div id="about">
+            <h1>DC's Changing Landscape</h1>
+            <p>Over the past few years, Washington DC has been undergoing economic, social, and demographic shifts. Property values in particular have been changing rapidly as parts of the city undergo aggressive development. See how these factors are shaping DC.</p>
+            <div data-control='geocode' id="search">
+                <form class="geocode">
+                    <input placeholder='Search for an address' type="text">
+                    <input type='submit' />
+                    <div id='geocode-error'></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="projects" class="layers">
+       <a data-control="layer" href="#building">Building Permits, 2011</a>
+       <a data-control="layer" href="#construction">City Construction Projects, 2011</a>
+    </div>
+    <div id="crime" class="layers">
+       <a data-control="layer" href="#crime">Total Crime, 2011</a>
+       <a data-control="layer" href="#robbery">Robbery, 2011</a>
+       <a data-control="layer" href="#theft">Theft, 2011</a>
+       <a data-control="layer" href="#auto">Theft from Auto, 2011</a>
+
+    </div>
+    <div id="map" class="map">
+        <div class="wax-legends">
+            <div class="wax-legend" style="display: block; ">
+                <div class="scale">
+                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=10">% Change in property value '10-'11</a></label>
+                    <div><img src="img/grid-scale-2.png" /></div>
+                    <div>
+                        <span>< -20</span>
+                        <span>< -10</span>
+                        <span>< -5</span>
+                        <span>< 0</span>
+                        <span>0</span>
+                        <span>> 0</span>
+                        <span>> 5</span>
+                        <span>> 10</span>
+                        <span>> 20</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAa0lEQVQIHWNkaPjPpPhitcn/f4xZDP8ZXjD8/tLBIvhsNe9/BqZ1jAwM0gyMDL8ZWHhYmLj/fmIGCzCAwH/mf8wM6kzizH8////PMBEsxvD/HdPf/5MY/wNFGMNWM0tzfhdgZeL7e39+wAcAdhYlGm+mTIMAAAAASUVORK5CYII=" style="margin-bottom: 2px;">
+                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=5">Construction project</a></label>
+                </div>
+                <div>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAV0lEQVQIHWP8//8/AxgwMjIyQDmM/52D4xkYmGYzMDIwAwX7GfasLgEKhn4GCvBAlDP8Y3h/j4MJKPAXKsAAVPmP4ezZP0wM/xkigIIfgfR3BgbGcpC5AExlIK8M2/cpAAAAAElFTkSuQmCC" style="margin-bottom: 2px;">
+                    <label><a href="http://data.dc.gov/Main_DataCatalog.aspx?id=3">Crime incident</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- External libraries and site script -->
+    <script src="ext/jquery.min.js"></script>
+    <script src="ext/modestmaps.min.js"></script>
+    <script src="ext/wax/wax.mm.js"></script>
+    <script src="ext/wax/wax.ext.js"></script>
+    <script src="ext/easey.js"></script>
+    <script src="ext/mmg.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- Site configuration -->
+    <script type="text/javascript">
+    
+        // Make a new map in #map
+        var main = Map('map', {
+            id: 'mapbox.mapbox-light,dhcole.dc-property-values',
+            center: {
+                lat: 38.9090033656251,
+                lon: -77.01439615889109,
+                zoom: 13
+            },
+            zoomRange: [0, 15],
+            features: [
+                'zoomwheel',
+                'movetips',
+                'zoombox',
+                'zoompan',
+                'share'
+            ]
+        });
+        
+        // Make a new layer switch in #nav for `map`
+        main.layers({
+            building: { id: 'dhcole.dc-building' },
+            construction: { id: 'dhcole.dc-construction' },
+            crime: { id: 'dhcole.dc-crime' },
+            robbery: { id: 'dhcole.dc-crime-robbery' },
+            theft: { id: 'dhcole.dc-crime-theft' },
+            auto: { id: 'dhcole.dc-crime-auto' }
+         });
+                 
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'OswaldBook';
+    src: url('Oswald-Regular-webfont.eot');
+    src: url('Oswald-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Oswald-Regular-webfont.woff') format('woff'),
+         url('Oswald-Regular-webfont.ttf') format('truetype'),
+         url('Oswald-Regular-webfont.svg#OswaldBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('OpenSans-Semibold-webfont.eot');
+    src: url('OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Semibold-webfont.woff') format('woff'),
+         url('OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('OpenSans-Italic-webfont.eot');
+    src: url('OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Italic-webfont.woff') format('woff'),
+         url('OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'OpenSans';
+    src: url('OpenSans-SemiboldItalic-webfont.eot');
+    src: url('OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+         url('OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
+         url('OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+    font-style: italic;
+    font-weight: bold;
+}
