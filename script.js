@@ -91,7 +91,7 @@
             } catch (e) {
                 MM_map.insertLayerAt(level, new wax.mm.connector(t));
             }
-            if (MM_map.interaction) MM_map.interaction.tilejson(t);
+            if (MM_map.interaction) MM_map.interaction.map(MM_map).tilejson(t);
             if (MM_map.legend) {
                 MM_map.legend.content(t);
             }
@@ -119,6 +119,8 @@
 
         var level = (l.level === 'base') ? 0 : 1;
         MM_map.removeLayerAt(level);
+        MM_map.legend.content(' ');
+        MM_map.interaction.remove();
     };
 
     root.Map = Map;
