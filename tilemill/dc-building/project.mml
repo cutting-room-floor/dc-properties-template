@@ -1,0 +1,48 @@
+{
+  "bounds": [
+    -77.1347,
+    38.8098,
+    -76.8954,
+    39.0011
+  ],
+  "center": [
+    -77.0169,
+    38.9194,
+    12
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "dcrabuildingpermitsc",
+    "template_teaser": "<div class=\"desc\">{{{DESC_OF_WORK}}}</div>",
+    "fields": [
+      "OFFENSE",
+      "REPORTDATETIME"
+    ]
+  },
+  "minzoom": 10,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "id": "dcrabuildingpermitsc",
+      "class": "dot",
+      "Datasource": {
+        "file": "layers/dcrabuildingpermitsc.csv",
+        "id": "dcrabuildingpermitsc",
+        "project": "dc-building",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "dcrabuildingpermitsc"
+    }
+  ],
+  "name": "DC Building Permits",
+  "description": "",
+  "attribution": "",
+  "legend": "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAa0lEQVQIHWNkaPjPpPhitcn/f4xZDP8ZXjD8/tLBIvhsNe9/BqZ1jAwM0gyMDL8ZWHhYmLj/fmIGCzCAwH/mf8wM6kzizH8////PMBEsxvD/HdPf/5MY/wNFGMNWM0tzfhdgZeL7e39+wAcAdhYlGm+mTIMAAAAASUVORK5CYII=\" style=\"margin-bottom: 2px;\" />\n<label><a href=\"http://data.dc.gov/Main_DataCatalog.aspx?id=5\">Building permit</a></label>"
+}

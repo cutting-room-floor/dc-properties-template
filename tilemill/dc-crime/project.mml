@@ -1,0 +1,48 @@
+{
+  "bounds": [
+    -77.1347,
+    38.8098,
+    -76.8954,
+    39.0011
+  ],
+  "center": [
+    -77.0169,
+    38.9194,
+    12
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "crimeincidentscurren",
+    "template_teaser": "<div class=\"offense\">{{{OFFENSE}}}</div>\n<div class=\"date\">{{{REPORTDATETIME}}}</div>",
+    "fields": [
+      "OFFENSE",
+      "REPORTDATETIME"
+    ]
+  },
+  "minzoom": 10,
+  "maxzoom": 17,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "point",
+      "id": "crimeincidentscurren",
+      "class": "dot",
+      "Datasource": {
+        "file": "layers/crimeincidentscurren.csv",
+        "id": "crimeincidentscurren",
+        "project": "dc-crime",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "crimeincidentscurren"
+    }
+  ],
+  "name": "DC Crime Incidents",
+  "description": "",
+  "attribution": "",
+  "legend": "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAV0lEQVQIHWP8//8/AxgwMjIyQDmM/52D4xkYmGYzMDIwAwX7GfasLgEKhn4GCvBAlDP8Y3h/j4MJKPAXKsAAVPmP4ezZP0wM/xkigIIfgfR3BgbGcpC5AExlIK8M2/cpAAAAAElFTkSuQmCC\" style=\"margin-bottom: 2px;\" />\n<label><a href=\"http://data.dc.gov/Main_DataCatalog.aspx?id=3\">Crime incident</a></label>"
+}
