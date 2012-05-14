@@ -15,11 +15,11 @@
         <div id="about">
             <h1>DC's Changing Landscape</h1>
             <p>Over the past few years, Washington DC has been undergoing economic, social, and demographic shifts. Property values in particular have been changing rapidly as parts of the city undergo aggressive development. See how these factors are shaping DC.</p>
-            <div data-control='geocode' id="search">
+            <div data-control="geocode" id="search">
                 <form class="geocode">
-                    <input placeholder='Search for an address' type="text">
-                    <input type='submit' />
-                    <div id='geocode-error'></div>
+                    <input placeholder="Search for an address" type="text">
+                    <input type="submit" />
+                    <div id="geocode-error"></div>
                 </form>
             </div>
         </div>
@@ -78,16 +78,17 @@
     <!-- Site configuration -->
     <script type="text/javascript">
     
-        // Make a new map in #map
+        // Make a new map in the #map element
         var main = Map('map', {
-            id: 'mapbox.mapbox-light,dhcole.dc-property-values',
+            // Specify the MapBox API url
+            api: 'http://a.tiles.mapbox.com/v3/mapbox.mapbox-light,mapbox.dc-property-values.jsonp',
             center: {
-                lat: 38.9090033656251,
-                lon: -77.01439615889109,
-                zoom: 13
+                lat: 38.9090033656251,      // Intial center point and zoom level.
+                lon: -77.014396158891,      // To find coordinates and zoom levels
+                zoom: 13                    // try: http://www.getlatlon.com
             },
-            zoomRange: [0, 15],
-            features: [
+            zoomRange: [0, 15],             // Limit zooming on the map to these levels
+            features: [                     // Map features (see readme.md)
                 'zoomwheel',
                 'movetips',
                 'zoombox',
@@ -96,14 +97,33 @@
             ]
         });
         
-        // Make a new layer switch in #nav for `map`
+        // Make a new layer switch for the map named `main`. Each layer gets
+        // a name and an object of settings. The layers are bound by name to
+        // the href hash of an element with a `data-control='layer'`, ex:
+        // <a data-control="layer" href="#building">Building Permits, 2011</a>
         main.layers({
-            building: { id: 'dhcole.dc-building' },
-            construction: { id: 'dhcole.dc-construction' },
-            crime: { id: 'dhcole.dc-crime' },
-            robbery: { id: 'dhcole.dc-crime-robbery' },
-            theft: { id: 'dhcole.dc-crime-theft' },
-            auto: { id: 'dhcole.dc-crime-auto' }
+            building: {                     // The name of the layer
+                // If api is specified, this map layer will be displayed
+                // on top of the base map specified when the map was initialized
+                api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-building.jsonp',
+                center: {                   // Optionally reposition the map.
+                    lat: 38.910606275724,   // New center point and zoom level
+                    lon: -77.00126406355,   // for the map. Specific either
+                    zoom: 14,               // lat and lon, zoom, or both.
+                    ease: 500               // Optional time to animimate moving
+                }                           // the map in milliseconds.
+            },
+            construction: { 
+                api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-construction.jsonp',
+                center: { zoom: 12, ease: 1000 }
+            },
+            crime: { 
+                api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime.jsonp',
+                center: { zoom: 13, ease: 1000 }
+             },
+            robbery: { api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-robbery.jsonp' },
+            theft: { api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-theft.jsonp' },
+            auto: { api: 'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-auto.jsonp' }
          });
                  
     </script>

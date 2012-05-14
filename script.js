@@ -2,12 +2,8 @@
     var Map = {},
         layers;
 
-    function api(l) {
-        return 'http://api.tiles.mapbox.com/v3/' + l.id + '.jsonp';
-    }
-
-    Map = function(el, l) {
-        wax.tilejson(api(l), function(t) {
+    Map = function(el, l, callback) {
+        wax.tilejson(l.api, function(t) {
             var handlers = [
                 new MM.DragHandler(),
                 new MM.DoubleClickHandler(),
@@ -68,6 +64,7 @@
                         break;
                 }
             }
+            if (callback && typeof(callback) == 'function') callback();
         });
         return Map;
     };
@@ -83,7 +80,7 @@
         if (!layers[id]) throw new Error('overlay with id ' + id + ' not found');
         var l = layers[id];
 
-        wax.tilejson(api(l), function(t) {
+        wax.tilejson(l.api, function(t) {
             var level = (l.level === 'base') ? 0 : 1;
             
             try {
