@@ -113,6 +113,7 @@ body > div {
     height: 200px;
 	width: 100%;
 	bottom: 0px;
+    background: rgb(255,255,255); /* old ie */
     background: rgba(255,255,255,.9);
     border-bottom: 1px solid #ccc;
     border-top: 5px solid #333;
@@ -267,10 +268,14 @@ a.zoomer {
 .wax-tooltip .offense { font-weight: 700; }
 
 .wax-tooltip .tip {
-    background: #333;
+    background: rgba(51,51,51,1);
     height: 10px;
     width: 10px;
+    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
     position: relative;
     top: -5px;
     left: 50%;
@@ -291,18 +296,19 @@ a.zoomer {
 .wax-legends {
     left: auto;
     right: 10px;
-    width: 290px;
+    height: 125px;
+    overflow-x: hidden;
     bottom: 215px;
     font-size: 11px;
 	font: .9em/1.5em 'OpenSans', sans-serif;
     }
-
+    
 .wax-legends a {
     color: rgb(51, 51, 51);
     }
 
 .wax-legends .wax-legend {
-    min-width: 0;
+    width: 275px;
     }
 
 .wax-legends .scale img { 
@@ -314,10 +320,12 @@ a.zoomer {
     }
 
 .wax-legend .scale {
-    float: left;
+    width: 100%;
     margin-bottom: 0;
     }
- 
+.wax-legend > div {
+    clear: both;
+    } 
 .wax-legend .scale span {
     display: block;
     width: 30px;
@@ -332,7 +340,6 @@ a.zoomer {
     }
 
 .wax-legend .scale > div {
-    float: left;
     }
 
 .wax-attribution {
