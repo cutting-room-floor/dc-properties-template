@@ -39,4 +39,7 @@ $('#map').mapbox(TileJSONs, function(map, tiledata) {
     // Set minimum and maximum zoom levels
     map.setZoomRange(0, 15);
 
+    // Add share control
+    mapbox.share().map(map).add();
+
 });
