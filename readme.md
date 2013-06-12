@@ -112,3 +112,4 @@ Use `data-control="switcher"` to bind all links in child elements to the layer s
 ```
 
 Easing links can be used together with the layer switcher.
+
