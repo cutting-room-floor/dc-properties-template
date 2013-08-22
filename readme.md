@@ -4,6 +4,8 @@ This template demonstrates a map site for browsing layers of TileMill maps on a 
 
 This map shows you how to make a web site to showcase a custom MapBox map you design, and TileMill maps you make with your own data.
 
+![Screenshot](https://f.cloud.github.com/assets/83384/1010747/d8b32690-0b4f-11e3-8f9f-4276e04b6536.jpg)
+
 To make your custom base map, [sign up for MapBox](http://mapbox.com/plans/) and [create a map](http://mapbox.com/hosting/creating/).
 
 To learn about making [TileMill](/tilemill) maps with your own data, check out the [TileMill documentation](http://mapbox.com/tilemill/docs/). The maps in this template use data from the [DC Data Portal](http://data.dc.gov/).
