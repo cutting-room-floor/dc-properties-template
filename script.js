@@ -1,11 +1,11 @@
 var TileJSONs = [
-    'http://a.tiles.mapbox.com/v3/examples.map-20v6611k,mapbox.dc-property-values.jsonp',
-    'http://a.tiles.mapbox.com/v3/mapbox.dc-building.jsonp',
-    'http://a.tiles.mapbox.com/v3/mapbox.dc-construction.jsonp',
-    'http://a.tiles.mapbox.com/v3/mapbox.dc-crime.jsonp',
-    'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-robbery.jsonp',
-    'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-theft.jsonp',
-    'http://a.tiles.mapbox.com/v3/mapbox.dc-crime-auto.jsonp'
+    'https://a.tiles.mapbox.com/v3/examples.map-20v6611k,mapbox.dc-property-values.jsonp?secure',
+    'https://a.tiles.mapbox.com/v3/mapbox.dc-building.jsonp?secure',
+    'https://a.tiles.mapbox.com/v3/mapbox.dc-construction.jsonp?secure',
+    'https://a.tiles.mapbox.com/v3/mapbox.dc-crime.jsonp?secure',
+    'https://a.tiles.mapbox.com/v3/mapbox.dc-crime-robbery.jsonp?secure',
+    'https://a.tiles.mapbox.com/v3/mapbox.dc-crime-theft.jsonp?secure',
+    'https://a.tiles.mapbox.com/v3/mapbox.dc-crime-auto.jsonp?secure'
 ];
 
 $('#map').mapbox(TileJSONs, function(map, tiledata) {
