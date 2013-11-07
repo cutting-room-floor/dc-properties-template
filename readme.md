@@ -1,3 +1,7 @@
+**deprecated: We highly recommend you start new projects from the [MapBox.js examples](https://www.mapbox.com/mapbox.js/example/v1.0.0/),
+rather than this project - the Foursquare Store Locator is based on an older version of MapBox.js which lacks new
+functionality.**
+
 # Data Exploration
 
 This template demonstrates a map site for browsing layers of TileMill maps on a custom MapBox map. It's designed to make it easy to get started and should be hacked up at will for your project.
